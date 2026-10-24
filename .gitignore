@@ -1,0 +1,13 @@
+node_modules/
+dist/
+*.tsbuildinfo
+__pycache__/
+*.py[cod]
+.venv/
+apps/api/data/
+apps/api/localdata/
+commerce-data/
+api-runtime.*.log
+web-runtime.*.log
+.env
+.env.local

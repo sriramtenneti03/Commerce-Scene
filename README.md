@@ -2,7 +2,7 @@
 
 CommerceScene is a product-content workspace for e-commerce teams. It brings a product catalogue, reusable visual guidelines, scene configuration, image review, and export preparation together in one application.
 
-The current repository provides a **runnable local development application**. Its mock generation provider creates clearly labeled preview artwork so you can exercise the catalogue-to-export workflow without external AI credentials or paid requests. This is a development build and is **not yet the production-ready application specified in [`spec.md`](spec.md)**.
+The current repository provides a **runnable local development application**. Its mock generation provider creates clearly labeled preview artwork so you can exercise the catalogue-to-export workflow without external AI credentials or paid requests. This is a development build and is **not yet the production-ready application**.
 
 ## Contents
 
@@ -48,7 +48,7 @@ flowchart LR
 - Uploaded images, mock output images, and ZIP archives are stored locally under `commerce-data/` by default.
 - The mock worker runs in a thread in the API process. Its job state is written to SQLite, but processing is not restart-safe.
 
-The local build intentionally uses SQLite and local files to keep setup simple. The production design in the spec calls for PostgreSQL, Supabase authentication and private object storage, and a durable Redis-backed worker; those services are not implemented in this build.
+The local build intentionally uses SQLite and local files to keep setup simple. The production design in the   calls for PostgreSQL, Supabase authentication and private object storage, and a durable Redis-backed worker; those services are not implemented in this build.
 
 ## Requirements
 
@@ -149,7 +149,7 @@ Main route groups include:
 - `/products` — list/search, create, retrieve, update, duplicate, archive, and CSV import.
 - `/uploads` and `/images` — source-image validation, registration, and file retrieval.
 - `/brands` — create, list, and version brand profiles.
-- `/generation/batches` — create batches, list them, and inspect outputs.
+- `/generation/batches` — create batches, list them, and in t outputs.
 - `/assets` — filter assets, approve outputs, and retrieve image files.
 - `/exports` — prepare ZIP exports, list export history, and download completed archives.
 
@@ -176,7 +176,7 @@ Before deploying to a shared or production environment, implement and verify at 
 - PostgreSQL models and migrations, private object storage, and short-lived authorized downloads.
 - A durable job queue, worker recovery/reconciliation, bounded retries, idempotency, cancellation, and provider rate limits.
 - A real image-generation provider adapter with server-only credentials, accurate provider status, and clear handling for unavailable credentials.
-- Configurable marketplace profiles and technical validation, plus the image editing/version history and comparison workflows in the spec.
+- Configurable marketplace profiles and technical validation, plus the image editing/version history and comparison workflows in the  .
 - Automated authorization/isolation, persistence, job, upload, export, and end-to-end tests.
 
 Do not treat the preview mock as AI output or use the current unauthenticated build as a multi-user service.
@@ -197,10 +197,10 @@ docs/
   API.md                    Endpoint overview
   ARCHITECTURE.md            Current and target architecture
   DEPLOYMENT.md              Local setup and production gaps
-spec.md                     Full product and production specification
+ .md                     Full product and production  ification
 IMPLEMENTATION_STATUS.md    Implemented features and remaining work
 ```
 
 ## Roadmap and known limitations
 
-The complete target requirements and acceptance criteria are in [`spec.md`](spec.md). Current gaps are tracked in [`IMPLEMENTATION_STATUS.md`](IMPLEMENTATION_STATUS.md). In particular, the build does not yet include Supabase authentication, workspaces or roles, PostgreSQL/Alembic, Redis/Celery, a real AI provider, robust job recovery, the full image editor, configurable marketplace validation, or automated test coverage. The API-process mock worker and synchronous local ZIP creation are appropriate only for demonstrating the current local workflow.
+The complete target requirements and acceptance criteria are in [` .md`]( .md). Current gaps are tracked in [`IMPLEMENTATION_STATUS.md`](IMPLEMENTATION_STATUS.md). In particular, the build does not yet include Supabase authentication, workspaces or roles, PostgreSQL/Alembic, Redis/Celery, a real AI provider, robust job recovery, the full image editor, configurable marketplace validation, or automated test coverage. The API-process mock worker and synchronous local ZIP creation are appropriate only for demonstrating the current local workflow.

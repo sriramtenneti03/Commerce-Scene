@@ -153,7 +153,7 @@ Main route groups include:
 - `/assets` — filter assets, approve outputs, and retrieve image files.
 - `/exports` — prepare ZIP exports, list export history, and download completed archives.
 
-See [`docs/API.md`](docs/API.md) for the route table and request behavior.
+
 
 ## Build and verification
 
@@ -194,13 +194,13 @@ apps/
     package.json            Frontend dependencies and scripts
     vite.config.ts          Development server and API proxy
 docs/
-  API.md                    Endpoint overview
-  ARCHITECTURE.md            Current and target architecture
-  DEPLOYMENT.md              Local setup and production gaps
- .md                     Full product and production  ification
-IMPLEMENTATION_STATUS.md    Implemented features and remaining work
+  API                     Endpoint overview
+  ARCHITECTURE             Current and target architecture
+  DEPLOYMENT               Local setup and production gaps
+                       Full product and production  ification
+IMPLEMENTATION_STATUS     Implemented features and remaining work
 ```
 
 ## Roadmap and known limitations
 
-The complete target requirements and acceptance criteria are in [` .md`]( .md). Current gaps are tracked in [`IMPLEMENTATION_STATUS.md`](IMPLEMENTATION_STATUS.md). In particular, the build does not yet include Supabase authentication, workspaces or roles, PostgreSQL/Alembic, Redis/Celery, a real AI provider, robust job recovery, the full image editor, configurable marketplace validation, or automated test coverage. The API-process mock worker and synchronous local ZIP creation are appropriate only for demonstrating the current local workflow.
+The complete target requirements and acceptance criteria are in [`  `](  ). Current gaps are tracked in [`IMPLEMENTATION_STATUS `](IMPLEMENTATION_STATUS ). In particular, the build does not yet include Supabase authentication, workspaces or roles, PostgreSQL/Alembic, Redis/Celery, a real AI provider, robust job recovery, the full image editor, configurable marketplace validation, or automated test coverage. The API-process mock worker and synchronous local ZIP creation are appropriate only for demonstrating the current local workflow.
